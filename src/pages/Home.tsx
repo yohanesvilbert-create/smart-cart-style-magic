@@ -36,6 +36,8 @@ const quickBuy = [
 
 const Home = () => {
   const navigate = useNavigate();
+  
+  console.log("Home component is rendering");
 
   return (
     <div className="min-h-screen">
