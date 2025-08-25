@@ -109,7 +109,9 @@ export default {
 				'scale-in': 'scaleIn 0.2s ease-out',
 				'bounce-in': 'bounceIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
 				'fade-in': 'fadeIn 0.3s ease-out',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'ai-pulse': 'aiPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'ai-float': 'aiFloat 3s ease-in-out infinite'
 			},
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
@@ -123,11 +125,18 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)',
 				'gradient-ai': 'var(--gradient-ai)',
+				'gradient-glass': 'var(--gradient-glass)',
+				'gradient-ai-glow': 'var(--gradient-ai-glow)',
+				'gradient-price-up': 'var(--gradient-price-up)',
+				'gradient-price-down': 'var(--gradient-price-down)',
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
 				'elevated': 'var(--shadow-elevated)',
 				'ai': 'var(--shadow-ai)',
+				'glass': 'var(--shadow-glass)',
+				'glow': 'var(--shadow-glow)',
+				'ai-pulse': 'var(--shadow-ai-pulse)',
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

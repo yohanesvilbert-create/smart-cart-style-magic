@@ -68,11 +68,18 @@ All colors MUST be HSL. Modern gradients and smooth animations.
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--ai-accent)));
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(210 40% 98%) 100%);
     --gradient-ai: linear-gradient(135deg, hsl(var(--ai-accent)), hsl(var(--primary)));
+    --gradient-glass: linear-gradient(145deg, hsl(var(--card) / 0.8) 0%, hsl(var(--card) / 0.4) 100%);
+    --gradient-ai-glow: linear-gradient(135deg, hsl(var(--ai-accent) / 0.3), hsl(var(--primary) / 0.3));
+    --gradient-price-up: linear-gradient(135deg, hsl(142 76% 36%), hsl(120 76% 46%));
+    --gradient-price-down: linear-gradient(135deg, hsl(0 84% 60%), hsl(15 84% 65%));
     
     /* Shadows */
     --shadow-card: 0 2px 10px hsl(var(--primary) / 0.1);
     --shadow-elevated: 0 8px 30px hsl(var(--primary) / 0.12);
     --shadow-ai: 0 4px 20px hsl(var(--ai-accent) / 0.15);
+    --shadow-glass: 0 8px 32px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 20px hsl(var(--ai-accent) / 0.4);
+    --shadow-ai-pulse: 0 0 0 0 hsl(var(--ai-accent) / 0.4);
 
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -174,6 +181,41 @@ All colors MUST be HSL. Modern gradients and smooth animations.
     box-shadow: var(--shadow-ai);
   }
 
+  /* Glassmorphism */
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.2);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-button {
+    background: hsl(var(--background) / 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* AI-specific effects */
+  .ai-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .ai-pulse {
+    animation: aiPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .ai-float {
+    animation: aiFloat 3s ease-in-out infinite;
+  }
+
+  .price-trend-up {
+    background: var(--gradient-price-up);
+  }
+
+  .price-trend-down {
+    background: var(--gradient-price-down);
+  }
+
   /* Mobile-first animations */
   .animate-slide-up {
     animation: slideUp 0.3s ease-out;
@@ -249,4 +291,49 @@ All colors MUST be HSL. Modern gradients and smooth animations.
       transform: scale(1);
     }
   }
+
+  @keyframes aiPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--ai-accent) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--ai-accent) / 0.6);
+    }
+  }
+
+  @keyframes aiFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Staggered animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
 }
