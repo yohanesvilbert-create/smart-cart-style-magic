@@ -52,6 +52,21 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				/* AI-specific colors */
+				ai: {
+					DEFAULT: 'hsl(var(--primary))',
+					accent: 'hsl(var(--ai-accent))',
+					light: 'hsl(var(--ai-light))',
+					foreground: 'hsl(var(--primary-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -88,7 +103,35 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'slide-up': 'slideUp 0.3s ease-out',
+				'slide-in': 'slideIn 0.3s ease-out',
+				'scale-in': 'scaleIn 0.2s ease-out',
+				'bounce-in': 'bounceIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'fade-in': 'fadeIn 0.3s ease-out',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+			},
+			spacing: {
+				'safe-bottom': 'env(safe-area-inset-bottom)',
+				'18': '4.5rem',
+				'88': '22rem',
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-ai': 'var(--gradient-ai)',
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'elevated': 'var(--shadow-elevated)',
+				'ai': 'var(--shadow-ai)',
+			},
+			transitionTimingFunction: {
+				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+				'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
 			}
 		}
 	},
